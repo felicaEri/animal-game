@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Nunito', 'Noto Sans JP', sans-serif;
+  color: #263b2d;
+  background: #e8f3df;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.page-shell {
+  min-height: 100vh;
+  padding: 38px 18px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, .65) 0 5px, transparent 6px),
+    radial-gradient(circle at 88% 78%, rgba(255, 255, 255, .55) 0 7px, transparent 8px),
+    #e8f3df;
+}
+
+.game-card {
+  width: min(100%, 560px);
+  padding: 36px 42px 30px;
+  border: 1px solid rgba(90, 125, 83, .15);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, .86);
+  box-shadow: 0 18px 50px rgba(66, 95, 60, .12);
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #71956b;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .22em;
+}
+
+h1 {
+  margin: 10px 0 4px;
+  font-size: clamp(25px, 5vw, 34px);
+  line-height: 1.3;
+  font-weight: 900;
+  letter-spacing: .02em;
+}
+
+.subtitle {
+  margin: 0;
+  color: #718174;
+  font-size: 14px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 28px 0 16px;
+}
+
+.stat-box {
+  min-width: 0;
+  padding: 12px 6px 10px;
+  border-radius: 15px;
+  background: #f0f6eb;
+}
+
+.stat-label {
+  display: block;
+  margin-bottom: 3px;
+  color: #81927d;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .13em;
+}
+
+.stat-box strong {
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-box small {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.timer-box strong {
+  color: #557e4e;
+}
+
+.timer-box.urgent strong {
+  color: #d35f4c;
+}
+
+.progress-track {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #e6eddf;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #9bc58b, #5f9a65);
+  transition: width .25s ease;
+}
+
+.question-panel {
+  margin: 24px 0 20px;
+  padding: 25px 16px 23px;
+  border: 1px solid #dcebd4;
+  border-radius: 20px;
+  background: #f7fbf4;
+}
+
+.question-caption,
+.question-hint {
+  display: block;
+  color: #82917e;
+  font-size: 12px;
+}
+
+.animal-name {
+  margin: 8px 0;
+  color: #345b3a;
+  font-size: clamp(42px, 10vw, 58px);
+  font-weight: 900;
+  letter-spacing: .08em;
+  line-height: 1.25;
+}
+
+.answer-form {
+  display: grid;
+  gap: 9px;
+  text-align: left;
+}
+
+.answer-form label {
+  color: #506b51;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.answer-form input {
+  width: 100%;
+  min-height: 54px;
+  padding: 0 16px;
+  border: 2px solid #dce8d6;
+  border-radius: 13px;
+  outline: none;
+  background: #fff;
+  color: #263b2d;
+  font-size: 18px;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.answer-form input:focus {
+  border-color: #80ad76;
+  box-shadow: 0 0 0 4px rgba(128, 173, 118, .13);
+}
+
+.answer-form input:disabled {
+  background: #f3f5f1;
+}
+
+.submit-button,
+.start-button,
+.reset-button {
+  min-height: 50px;
+  border: 0;
+  border-radius: 13px;
+  cursor: pointer;
+  font-weight: 900;
+  transition: transform .15s, opacity .15s, background .15s;
+}
+
+.submit-button {
+  margin-top: 3px;
+  background: #6f9d68;
+  color: #fff;
+  font-size: 15px;
+}
+
+.submit-button:hover:not(:disabled),
+.start-button:hover,
+.reset-button:hover {
+  transform: translateY(-2px);
+}
+
+.submit-button:disabled {
+  cursor: not-allowed;
+  opacity: .45;
+}
+
+.message {
+  min-height: 24px;
+  margin: 13px 0 10px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.message.success {
+  color: #4c9856;
+}
+
+.message.error {
+  color: #c46c50;
+}
+
+.message.normal {
+  color: #788878;
+}
+
+.start-button {
+  width: 100%;
+  background: #345f3b;
+  color: #fff;
+  font-size: 16px;
+}
+
+.reset-button {
+  padding: 0 18px;
+  background: #eaf1e5;
+  color: #587454;
+  font-size: 13px;
+}
+
+.rule-note {
+  margin: 17px 0 0;
+  color: #8a9787;
+  font-size: 11px;
+}
+
+footer {
+  padding-top: 18px;
+  color: #8ca187;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .25em;
+}
+
+/* スマートフォン向け */
+@media (max-width: 480px) {
+  .page-shell {
+    padding: 20px 12px;
+  }
+
+  .game-card {
+    padding: 28px 20px 24px;
+    border-radius: 22px;
+  }
+
+  .stats {
+    gap: 7px;
+    margin-top: 22px;
+  }
+
+  .stat-box strong {
+    font-size: 21px;
+  }
+
+  .question-panel {
+    margin-top: 20px;
+    padding: 23px 12px;
+  }
+}
